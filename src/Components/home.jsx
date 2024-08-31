@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 function Home(){
-    const targetDate = new Date('2024-09-04T15:00:00'); 
+    const targetDate = new Date('2024-09-06T15:00:00'); 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
