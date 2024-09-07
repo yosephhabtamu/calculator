@@ -1,12 +1,16 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { deletePost, fetchPosts, fetchSinglePost } from "../../lib/features/postService";
+import {
+  deletePost,
+  fetchPosts,
+  fetchSinglePost,
+} from "../../lib/features/posts/postService";
 import PostForm from "./postForm";
 
 const PostsList = () => {
   const dispatch = useDispatch();
   const [selectedPost, setSelectedPost] = React.useState(null);
-  const { posts,post, isLoading, loadingMessage, isError, errorMessage } =
+  const { posts, post, isLoading, loadingMessage, isError, errorMessage } =
     useSelector((state) => state.posts);
 
   useEffect(() => {
@@ -68,16 +72,16 @@ const PostsList = () => {
                   </button>
                 </div>
               </td>
-                {post && post.id === postItem.id && (
-                  <div className="container mt-3">
-                    <h5 className="mb-3">Single post Details</h5>
-                    <pre className="bg-light p-3 rounded border">
-                      <code className="text-dark">
-                        {JSON.stringify(post, null, 2)}
-                      </code>
-                    </pre>
-                  </div>
-                )}
+              {post && post.id === postItem.id && (
+                <div className="container mt-3">
+                  <h5 className="mb-3">Single post Details</h5>
+                  <pre className="bg-light p-3 rounded border">
+                    <code className="text-dark">
+                      {JSON.stringify(post, null, 2)}
+                    </code>
+                  </pre>
+                </div>
+              )}
             </tr>
           ))}
         </tbody>

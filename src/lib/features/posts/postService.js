@@ -71,7 +71,7 @@ export const updatePost = (post) => {
       const data = await response.json();
       dispatch(updatePostSuccess(data));
     } catch (error) {
-        console.error(error);
+      console.error(error);
       dispatch(actionFailure("An error occurred while updating post."));
     }
   };
@@ -81,12 +81,15 @@ export const deletePost = (id) => {
   return async function (dispatch) {
     try {
       dispatch(actionLoading("Deleting post..."));
-     const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
-        method: "DELETE",
-      });
-      if(response.status === 200){
-          dispatch(deletePostSuccess(id));
+      const response = await fetch(
+        `https://jsonplaceholder.typicode.com/posts/${id}`,
+        {
+          method: "DELETE",
         }
+      );
+      if (response.status === 200) {
+        dispatch(deletePostSuccess(id));
+      }
     } catch (error) {
       dispatch(actionFailure("An error occurred while deleting post."));
     }

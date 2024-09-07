@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addPost, updatePost } from "../../lib/features/postService";
+import { addPost, updatePost } from "../../lib/features/posts/postService";
 
 const PostForm = ({ post, setSelectedPost, className }) => {
   const [title, setTitle] = useState(post ? post?.title : "");
@@ -13,7 +13,6 @@ const PostForm = ({ post, setSelectedPost, className }) => {
     setTitle(post ? post?.title : "");
     setBody(post ? post?.body : "");
   }, [post]);
-
 
   const handleSave = () => {
     if (title.trim() === "" || body.trim() === "") {
@@ -34,33 +33,37 @@ const PostForm = ({ post, setSelectedPost, className }) => {
   };
 
   return (
-    
-        <div className={`row ${className}`}>
-            <div className="col">
-            <input
-                type="text"
-                className="form-control"
-                placeholder="Post title"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-            />
-            </div>
-            <div className="col">
-            <input
-                type="text"
-                className="form-control"
-                placeholder="Post body"
-                value={body}
-                onChange={(e) => setBody(e.target.value)}
-            />
-            </div>
-            <div className="col">
-            <button onClick={()=>handleSave()} className="btn btn-primary">
-                {post ? "Update" : "Add"}
-            </button>
-            <button className="btn btn-danger mx-2" onClick={()=>setSelectedPost(null)} >Cancel</button>
-            </div>
-        </div>
+    <div className={`row ${className}`}>
+      <div className="col">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Post title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+      </div>
+      <div className="col">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Post body"
+          value={body}
+          onChange={(e) => setBody(e.target.value)}
+        />
+      </div>
+      <div className="col">
+        <button onClick={() => handleSave()} className="btn btn-primary">
+          {post ? "Update" : "Add"}
+        </button>
+        <button
+          className="btn btn-danger mx-2"
+          onClick={() => setSelectedPost(null)}
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
   );
 };
 
