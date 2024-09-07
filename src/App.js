@@ -7,7 +7,7 @@ import Subtract from "./Components/subtract";
 import Home from "./Components/home";
 import TodoApp from "./Components/todoList";
 import Counter from "./Components/reduxCounter";
-import PostsList from "./Components/posts";
+import PostsList from "./Components/posts/postsList";
 
 function App() {
   return (
