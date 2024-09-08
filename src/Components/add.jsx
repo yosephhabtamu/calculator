@@ -37,7 +37,12 @@ function Add(){
         />
         <button onClick={() => handleSum()}> Add </button>
         <ShowResult result={result} />
-        <CodePreview path="src/Components/add.jsx" />
+        <div className="container" style={{ marginTop: "3rem" }}>
+          <h6>Add Component code</h6>
+          <CodePreview path="src/Components/add.jsx" />
+          <h6>showResult Component code</h6>
+          <CodePreview path="src/Components/showResult.jsx" />
+        </div>
       </>
     );
 
