@@ -8,7 +8,6 @@ import {
 import PostForm from "./postForm";
 import CodePreview from "../snippetPreview/codePreview";
 
-
 const PostsList = () => {
   const dispatch = useDispatch();
   const [selectedPost, setSelectedPost] = React.useState(null);
@@ -88,7 +87,16 @@ const PostsList = () => {
           ))}
         </tbody>
       </table>
-      <CodePreview path="src/Components/posts/postsList.jsx" />
+      <div className="container" style={{marginTop:"3rem"}}>
+        <h6>post form code</h6>
+        <CodePreview path="src/Components/posts/postForm.jsx" />
+        <h6>post list code</h6>
+        <CodePreview path="src/Components/posts/postsList.jsx" />
+        <h6>slice code</h6>
+        <CodePreview path="src/lib/features/posts/postService.js" />
+        <h6>store code</h6>
+        <CodePreview path="src/lib/store.js" />
+      </div>
     </div>
   );
 };

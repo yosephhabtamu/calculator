@@ -43,11 +43,12 @@ function Home(){
               <Link to="/counter-redux">simple counter redux example </Link>
             </li>
             <li className="list-group-item">
-              <Link to="/posts-redux">Crud operation from placeholder api redux example</Link>
+              <Link to="/posts-redux">
+                Crud operation from placeholder api redux example
+              </Link>
             </li>
           </ul>
         </nav>
-        <h5>Explanation</h5>
         <h5>Resources</h5>
         <nav className="container">
           <ul className="list-group">
@@ -81,9 +82,20 @@ function Home(){
                 Bootstrap Documentation
               </a>
             </li>
+            <li className="list-group-item">
+              <a
+                href="https://github.com/yosephhabtamu/calculator"
+                target="_blank"
+              >
+                This website's source code
+              </a>
+            </li>
           </ul>
         </nav>
-        <CodePreview path="src/Components/home.jsx" />
+        <div className="container" style={{ marginTop: "3rem" }}>
+          <h6>Home Component code</h6>
+          <CodePreview path="src/Components/home.jsx" />
+        </div>
       </>
     );
 }

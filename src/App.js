@@ -8,10 +8,14 @@ import Home from "./Components/home";
 import TodoApp from "./Components/todoList";
 import Counter from "./Components/reduxCounter";
 import PostsList from "./Components/posts/postsList";
+import { Link } from "react-router-dom"; 
 
 function App() {
   return (
     <BrowserRouter>
+      <Link to="/">
+        <button className="btn btn-primary">HomePage</button>
+      </Link>
       <Routes>
         <Route index element={<Home />} />
         <Route path="add" element={<Add />} />

@@ -130,7 +130,10 @@ const TodoApp = () => {
           ))}
         </ul>
       </div>
-      <CodePreview path="src/Components/todoList.jsx"/>
+      <div className="container" style={{ marginTop: "3rem" }}>
+        <h6>Todo list Component code</h6>
+        <CodePreview path="src/Components/todoList.jsx" />
+      </div>
     </div>
   );
 };
