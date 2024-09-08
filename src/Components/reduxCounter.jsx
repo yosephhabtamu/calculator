@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux"
 import { increment, decrement } from "../lib/features/counterSlice";
+import CodePreview from "./snippetPreview/codePreview";
 
 export default function Counter(){
     const count = useSelector(state => state.counter.count);
@@ -11,6 +12,7 @@ export default function Counter(){
             <h2>{count}</h2>
             <button onClick={()=>dispatch(increment())} className="btn btn-primary">Increment</button>
             <button onClick={()=>dispatch(decrement())} className="btn btn-danger">Decrement</button>
+            <CodePreview path="src/Components/reduxCounter.jsx"/>
         </div>
     )
 }

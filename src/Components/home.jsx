@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import CodePreview from "./snippetPreview/codePreview";
+
 function Home(){
     return (
       <>
@@ -81,6 +83,7 @@ function Home(){
             </li>
           </ul>
         </nav>
+        <CodePreview path="src/Components/home.jsx" />
       </>
     );
 }

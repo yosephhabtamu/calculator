@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import CodePreview from "./snippetPreview/codePreview";
+
 
 const TodoApp = () => {
   const [title, setTitle] = useState("");
@@ -128,6 +130,7 @@ const TodoApp = () => {
           ))}
         </ul>
       </div>
+      <CodePreview path="src/Components/todoList.jsx"/>
     </div>
   );
 };

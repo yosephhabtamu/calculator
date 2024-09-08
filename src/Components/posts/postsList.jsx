@@ -6,6 +6,8 @@ import {
   fetchSinglePost,
 } from "../../lib/features/posts/postService";
 import PostForm from "./postForm";
+import CodePreview from "../snippetPreview/codePreview";
+
 
 const PostsList = () => {
   const dispatch = useDispatch();
@@ -86,6 +88,7 @@ const PostsList = () => {
           ))}
         </tbody>
       </table>
+      <CodePreview path="src/Components/posts/postsList.jsx" />
     </div>
   );
 };
