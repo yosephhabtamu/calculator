@@ -1,10 +1,10 @@
 import ShowResult from "./showResult";
 import { useState } from "react";
+import CodePreview from "./snippetPreview/codePreview";
 
 
 
 function Add(){
-
     const [firstNumber, setFirstNumber] = useState(0);
     function handleFirstNumberInput(event){
         const firstNumber = parseInt(event.target.value)
@@ -24,13 +24,22 @@ function Add(){
     }
 
     return (
-        <>
-        <input onChange={(event)=>handleFirstNumberInput(event)} type="text" placeholder="first number" />
-        <input onChange={(event)=>handleSecondNumberInput(event)} type="text" placeholder="second number" />
-        <button onClick={()=>handleSum()}> Add </button>
-        <ShowResult result = {result}/>
-        </>
-    )
+      <>
+        <input
+          onChange={(event) => handleFirstNumberInput(event)}
+          type="text"
+          placeholder="first number"
+        />
+        <input
+          onChange={(event) => handleSecondNumberInput(event)}
+          type="text"
+          placeholder="second number"
+        />
+        <button onClick={() => handleSum()}> Add </button>
+        <ShowResult result={result} />
+        <CodePreview path="src/Components/add.jsx" />
+      </>
+    );
 
 }
 

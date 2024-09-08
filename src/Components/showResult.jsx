@@ -1,4 +1,3 @@
-
 export function ShowResult(props){
     const result = props.result;
     return (
